@@ -1,0 +1,86 @@
+.unveiling_central_asia {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 310px;
+
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+
+    .title_text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      max-width: 1280px;
+      text-align: center;
+
+
+      h2 {
+        font-size: 36px;
+        font-family: "Bebas Neue";
+        font-weight: 400;
+        margin: 0;
+      }
+
+      p {
+        font-size: 18px;
+        font-weight: 400;
+      }
+    }
+
+    .central_asia_map {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      .central_asia {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 92px;
+      }
+
+      .Union1 {
+        position: absolute;
+        top: 162.2px;
+        left: 250px;
+      }
+
+      .Union2 {
+        position: absolute;
+        top: 303.2px;
+        left: 98.8px;
+      }
+
+      .Union3 {
+        position: absolute;
+        top: 71.2px;
+        left: 676px;
+      }
+
+      .Union4 {
+        position: absolute;
+        top: 246px;
+        left: 780px;
+      }
+
+      .Union5 {
+        position: absolute;
+        top: 353.2px;
+        left: 845px;
+      }
+
+      .Line5 {
+        position: absolute;
+        top: 346.2px;
+        left: 745px;
+      }
+
+
+    }
+  }
+}

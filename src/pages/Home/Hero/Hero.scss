@@ -1,0 +1,229 @@
+.Hero {
+  width: 100%;
+  background-image: url("../../../assets/Images/Hero_img.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+
+    .upper-header {
+      display: flex;
+      justify-content: space-between;
+      color: white;
+      padding-top: 16px;
+
+      a {
+        color: white;
+        text-decoration: none;
+
+      }
+
+      .contact-container {
+        display: flex;
+
+        .flex,
+        .flex2,
+        .flex3 {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+        }
+
+        .flex2,
+        .flex3 {
+          padding-left: 36px;
+        }
+      }
+
+      .social-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        font-size: 19px;
+      }
+    }
+
+    .header {
+      margin-top: 33px;
+
+      .header-row {
+        display: flex;
+        justify-content: space-between;
+
+        .logo-container {
+          display: flex;
+          justify-content: center;
+          gap: 12px;
+          color: white;
+
+          h2 {
+            font-weight: 300;
+          }
+        }
+
+        .navigation-container {
+          display: flex;
+          justify-content: center;
+          gap: 12px;
+          align-items: center;
+
+          ul {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            list-style: none;
+
+            li {
+              a, select {
+                text-decoration: none;
+                color: white;
+                font-size: 1.2rem;
+                font-weight: 300;
+                padding: 12px;
+                background: none;
+                border: none;
+                cursor: pointer;
+                appearance: none;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                border-radius: 4px;
+
+                &:hover {
+                  background-color: #646cffaa;
+                }
+              }
+            }
+          }
+        }
+
+        .search_language-container {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          padding-left: 36px;
+
+          .search-container {
+            color: white;
+            font-size: 28px;
+          }
+
+          .language-container {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+
+            h3 {
+              color: white;
+            }
+
+            .dropDown {
+              font-size: 20px;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+
+    .Landing_text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 140px;
+      padding-bottom: 290px;
+
+      h1 {
+        color: white;
+        font-family: "Bebas Neue";
+        font-size: 72px;
+        font-weight: 400;
+        margin: 0;
+      }
+
+      p {
+        color: white;
+        font-size: 24px;
+        margin: 0;
+      }
+
+      button {
+        width: 200px;
+        height: 50px;
+        font-size: 17px;
+        font-weight: 600;
+        border-radius: 6px;
+        margin-top: 30px;
+        cursor: pointer;
+        outline: none;
+        border: none;
+      }
+
+      button:hover {
+        background-color: #1CAC78;
+      }
+    }
+
+    .Adventure {
+      position: absolute;
+      top: 85%;
+      left: 18.7%;
+      width: 1040px;
+      display: flex;
+      flex-direction: column;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      z-index: 10;
+      border-radius: 8px;
+      .adventure_title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        font-weight: 500;
+      }
+
+      .adventure_sorting {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        padding: 20px;
+        margin-bottom: 36px;
+
+        h2 {
+          color: #1CAC78;
+          font-size: 32px;
+          font-weight: 600;
+          margin: 0;
+        }
+
+        p {
+          color: #1CAC78;
+          font-size: 24px;
+          margin: 0;
+        }
+
+        button {
+          width: 200px;
+          height: 50px;
+          font-size: 17px;
+          font-weight: 600;
+          border-radius: 6px;
+          margin-top: 30px;
+          cursor: pointer;
+          outline: none;
+          border: none;
+          color: white;
+          background-color: #1CAC78;
+        }
+      }
+    }
+  }
+}
