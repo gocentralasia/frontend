@@ -14,19 +14,22 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
-
-      - name: Login to DockerHub
+      - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-
-      - name: Build and push Frontend Docker image
-        run: |
-          docker-compose -f /var/www/gocentralasia/docker-compose.yml build frontend
-          docker-compose -f /var/www/gocentralasia/docker-compose.yml push frontend
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          file: Dockerfile
+          push: true
+          tags: user/app:latest
 
       - name: SSH deploy Frontend to server
         uses: appleboy/ssh-action@master
