@@ -7,6 +7,7 @@ import PopularTour from "./PopularTours/PopularTour.tsx";
 import Offers from "./Offers/Offers.tsx";
 import Testimonial from "./Testimonial/Testimonial.tsx";
 import Gallery from "./Gallery/Gallery.tsx";
+import Reason from "./Reason/Reason.tsx";
 
 function Index() {
   return (
@@ -20,6 +21,7 @@ function Index() {
       <Offers />
       <Testimonial />
       <Gallery />
+      <Reason />
     </div>
   );
 }
