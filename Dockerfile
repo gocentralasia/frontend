@@ -1,21 +1,23 @@
-FROM node:18-alpine as build
-
-WORKDIR /app
-
-COPY package*.json ./
-
-RUN npm install
-
-COPY . .
-
-RUN npm run build
-
+# Use the official Node.js image as a base
 FROM node:18-alpine
 
+# Set the working directory inside the container
 WORKDIR /app/frontend
 
-COPY --from=build /app/frontend/build ./build
+# Copy package.json and package-lock.json to the working directory
+COPY package*.json ./
 
-RUN npm install -g http-server
+# Install dependencies
+RUN npm install
 
-CMD ["http-server", "./build", "-p", "3000"]
+# Copy the entire project to the working directory
+COPY . .
+
+# Build the React app for production
+RUN npm run build
+
+# Expose port 3000 to the outside world
+EXPOSE 3000
+
+# Command to run the React app
+CMD ["npm", "start"]
