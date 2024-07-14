@@ -1,6 +1,6 @@
 function Index() {
   return (
-    <div>test ci/cd</div>
+    <div>test ci/cd 2</div>
   );
 }
 
