@@ -30,7 +30,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: user/app:latest
+          tags: user/frontend:latest
 
       - name: SSH deploy Frontend to server
         uses: appleboy/ssh-action@master
