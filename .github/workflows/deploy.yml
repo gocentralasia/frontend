@@ -29,7 +29,7 @@ jobs:
         with:
           context: .
           file: ./Dockerfile
-          push: true
+          push: false
           tags: user/frontend:latest
 
       - name: SSH deploy Frontend to server
