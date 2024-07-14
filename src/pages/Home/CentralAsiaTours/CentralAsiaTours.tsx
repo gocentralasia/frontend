@@ -7,7 +7,7 @@ import Title from "../../../components/Title/Title.tsx";
 import River from '../../../assets/Images/CA_photo1.png'
 import Mountain from "../../../assets/Images/CA_photo2.png"
 
-// TODO: fix classnames
+
 function CentralAsiaTours() {
   return (
     <div className="central_asia_tours">
