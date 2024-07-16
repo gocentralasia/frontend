@@ -1,101 +1,130 @@
-import './Hero.scss'
+import React, { useState } from 'react';
+import './Hero.scss';
 
 //components
 import AdventureComponent from "../../../components/AdventureComponent/AdventureComponent.tsx";
 
 //images
-import Logo from "../../../assets/Images/Logo.png"
+import Logo from "../../../assets/Images/Logo.png";
 
 //icons
-import {FaInstagram} from "react-icons/fa";
-import {FaWhatsapp} from "react-icons/fa";
-import {FaYoutube} from "react-icons/fa";
-import {FaPhone} from "react-icons/fa6";
-import {CiMail} from "react-icons/ci";
-import {HiOutlineQuestionMarkCircle} from "react-icons/hi";
-import {CiSearch} from "react-icons/ci";
-import {IoMdArrowDropdown} from "react-icons/io";
-import { PiFlowArrow } from "react-icons/pi";
-import { FaCalendarAlt } from "react-icons/fa";
-import { PiHardDrives } from "react-icons/pi";
+import { FaInstagram, FaWhatsapp, FaYoutube, FaPhone, FaCalendarAlt } from "react-icons/fa";
+import { CiMail, CiSearch } from "react-icons/ci";
+import { HiOutlineQuestionMarkCircle } from "react-icons/hi";
+import { IoMdArrowDropdown } from "react-icons/io";
+import { PiFlowArrow, PiHardDrives } from "react-icons/pi";
 
-function Hero() {
+const Hero: React.FC = () => {
+  const [isDestinationModalOpen, setDestinationModalOpen] = useState(false);
+  const [isTourModalOpen, setTourModalOpen] = useState(false);
+
+  const handleDestinationClick = () => {
+    setDestinationModalOpen(!isDestinationModalOpen);
+    setTourModalOpen(false); // Закрыть туры, если открыто
+  };
+
+  const handleTourClick = () => {
+    setTourModalOpen(!isTourModalOpen);
+    setDestinationModalOpen(false); // Закрыть направления, если открыто
+  };
+
+
+
   return (
     <section className="Hero">
       <div className="container">
         <div className="upper-header">
           <div className="contact-container">
             <div className="flex">
-              <FaPhone/>
-              <a href="+996 700 01 55 99">+996 700 01 55 99</a>
+              <FaPhone />
+              <a href="tel:+996700015599">+996 700 01 55 99</a>
             </div>
             <div className="flex2">
-              <CiMail/>
-              <a href="Gocentralasia@gmail.com">Gocentralasia@gmail.com</a>
+              <CiMail />
+              <a href="mailto:Gocentralasia@gmail.com">Gocentralasia@gmail.com</a>
             </div>
             <div className="flex3">
-              <HiOutlineQuestionMarkCircle/>
+              <HiOutlineQuestionMarkCircle />
               <a href="#">FAQ</a>
             </div>
           </div>
           <div className="social-container">
-            <FaInstagram/>
-            <FaWhatsapp/>
-            <FaYoutube/>
+            <FaInstagram />
+            <FaWhatsapp />
+            <FaYoutube />
           </div>
         </div>
         <div className="header">
           <div className="container">
             <div className="header-row">
               <div className="logo-container">
-                <img src={Logo} alt="logo"/>
+                <img src={Logo} alt="logo" />
                 <h2>Gocentralasia</h2>
               </div>
               <div className="navigation-container">
                 <ul>
                   <li><a href="#">Home</a></li>
-                  <li><a>Desitination</a></li>
-                  <li><a>Tour</a></li>
+                  <li><a onClick={handleDestinationClick}>Destination</a></li>
+                  <li><a onClick={handleTourClick}>Tour</a></li>
                   <li><a href="#">Blog</a></li>
                   <li><a href="#">About us</a></li>
                   <li><a href="#">Contact Us</a></li>
                 </ul>
+                {(isDestinationModalOpen || isTourModalOpen) && (
+                  <div className="dropdown_modals">
+                    {isDestinationModalOpen && (
+                      <div className="dropdown_modal_destination">
+                        <ul>
+                          <li><a href="#">Central Asia</a></li>
+                          <li><a href="#">Kyrgyzstan</a></li>
+                          <li><a href="#">Kazakhstan</a></li>
+                          <li><a href="#">Uzbekistan</a></li>
+                        </ul>
+                      </div>
+                    )}
+                    {isTourModalOpen && (
+                      <div className="dropdown_modal_tour">
+                        <ul>
+                          <li><a href="#">Adventure Tours</a></li>
+                          <li><a href="#">Cultural Tours</a></li>
+                          <li><a href="#">Nature Tours</a></li>
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
               <div className="search_language-container">
                 <div className="search-container">
-                  <CiSearch/>
+                  <CiSearch />
                 </div>
                 <div className="language-container">
                   <h3>ENG</h3>
-                  <IoMdArrowDropdown className="dropDown"/>
+                  <IoMdArrowDropdown className="dropDown" />
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div className="Landing_text">
-          <h1>
-            Group tours
-          </h1>
+          <h1>Group tours</h1>
           <p>Embark on Unforgettable Group Adventures</p>
-          <button>View torse</button>
+          <button>View tours</button>
         </div>
 
-
         <div className="Adventure">
-           <div className="adventure_title">
-             <h3>Find your next adventure</h3>
-           </div>
+          <div className="adventure_title">
+            <h3>Find your next adventure</h3>
+          </div>
           <div className="adventure_sorting">
             <AdventureComponent icon={PiFlowArrow} title="Destination" />
-            <AdventureComponent icon={FaCalendarAlt } title="Month" />
-            <AdventureComponent icon={PiHardDrives } title="Types" />
+            <AdventureComponent icon={FaCalendarAlt} title="Month" />
+            <AdventureComponent icon={PiHardDrives} title="Types" />
             <button>Find</button>
           </div>
         </div>
       </div>
     </section>
-
   );
 }
 

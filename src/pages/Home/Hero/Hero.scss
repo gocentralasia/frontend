@@ -18,7 +18,6 @@
       a {
         color: white;
         text-decoration: none;
-
       }
 
       .contact-container {
@@ -53,6 +52,7 @@
       .header-row {
         display: flex;
         justify-content: space-between;
+        align-items: center;
 
         .logo-container {
           display: flex;
@@ -68,8 +68,9 @@
         .navigation-container {
           display: flex;
           justify-content: center;
-          gap: 12px;
           align-items: center;
+          gap: 12px;
+          position: relative;
 
           ul {
             display: flex;
@@ -78,7 +79,9 @@
             list-style: none;
 
             li {
-              a, select {
+              position: relative;
+
+              a {
                 text-decoration: none;
                 color: white;
                 font-size: 1.2rem;
@@ -87,18 +90,77 @@
                 background: none;
                 border: none;
                 cursor: pointer;
-                appearance: none;
-                -webkit-appearance: none;
-                -moz-appearance: none;
-                border-radius: 4px;
 
                 &:hover {
-                  background-color: #646cffaa;
+                  background-color: #1CAC78;
+                  color: white;
+                  border-radius: 5px;
                 }
               }
             }
           }
         }
+
+        .dropdown_modals {
+          position: absolute;
+          top: 100%;
+          left: 25%;
+          background-color: #f8f9fa;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          border-radius: 8px;
+          overflow: hidden;
+          animation: slideDown 0.3s ease-in-out;
+          z-index: 10;
+
+          .dropdown_modal_destination {
+            ul {
+              display: flex;
+              flex-direction: column;
+              list-style: none;
+              margin: 0;
+              padding: 10px 0;
+
+              li {
+                padding: 10px 20px;
+
+                a {
+                  color: #333;
+                  text-decoration: none;
+
+                  &:hover {
+                    background-color: #1CAC78;
+                    color: white;
+                  }
+                }
+              }
+            }
+          }
+          .dropdown_modal_tour {
+            ul {
+              display: flex;
+              flex-direction: column;
+              list-style: none;
+              margin: 0;
+              padding: 10px 0;
+
+              li {
+                padding: 10px 20px;
+
+                a {
+                  color: #333;
+                  text-decoration: none;
+
+                  &:hover {
+                    background-color: #1CAC78;
+                    color: white;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+
 
         .search_language-container {
           display: flex;
@@ -161,10 +223,12 @@
         cursor: pointer;
         outline: none;
         border: none;
-      }
-
-      button:hover {
+        color: white;
         background-color: #1CAC78;
+
+        &:hover {
+          background-color: #17a669;
+        }
       }
     }
 
@@ -181,12 +245,14 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       z-index: 10;
       border-radius: 8px;
+
       .adventure_title {
         display: flex;
         justify-content: center;
         align-items: center;
         font-size: 24px;
         font-weight: 500;
+        padding: 20px;
       }
 
       .adventure_sorting {
@@ -196,19 +262,6 @@
         gap: 16px;
         padding: 20px;
         margin-bottom: 36px;
-
-        h2 {
-          color: #1CAC78;
-          font-size: 32px;
-          font-weight: 600;
-          margin: 0;
-        }
-
-        p {
-          color: #1CAC78;
-          font-size: 24px;
-          margin: 0;
-        }
 
         button {
           width: 200px;
@@ -222,8 +275,23 @@
           border: none;
           color: white;
           background-color: #1CAC78;
+
+          &:hover {
+            background-color: #17a669;
+          }
         }
       }
     }
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
